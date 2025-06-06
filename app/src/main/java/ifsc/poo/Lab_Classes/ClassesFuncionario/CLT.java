@@ -44,7 +44,7 @@ public class CLT extends Funcionario {
     }
 
     public List<String> getHabilidades() {
-        return new ArrayList<>(habilidades);
+        return new ArrayList<>(this.habilidades);
     }
 
     public void setHabilidades(List<String> habilidades) {
