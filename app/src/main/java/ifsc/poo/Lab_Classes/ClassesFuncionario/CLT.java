@@ -10,13 +10,18 @@ public class CLT extends Funcionario {
     private int cargaHorariaSemanal;
     private String numeroCarteiraDeTrabalho;
     private List<String> habilidades;
+    private List<Estagiario> estagiarios;
     
-    public CLT(String nome, String sobrenome, String cpf, String email, String dataInicioContrato, double salarioBrutoMensal, int cargaHorariaSemanal, String numeroCarteiraDeTrabalho, List<String> habilidades){
+    public CLT(String nome, String sobrenome, String cpf, String email, String dataInicioContrato, double salarioBrutoMensal, int cargaHorariaSemanal, String numeroCarteiraDeTrabalho, List<String> habilidades, List<Estagiario> estagiarios){
         super(nome, sobrenome, cpf, email, dataInicioContrato);
         this.salarioBrutoMensal = salarioBrutoMensal;
         this.cargaHorariaSemanal = cargaHorariaSemanal;
         this.numeroCarteiraDeTrabalho = numeroCarteiraDeTrabalho;
         this.habilidades = new ArrayList<>(habilidades);
+
+        if(estagiarios.size() < 2){
+            this.estagiarios = new ArrayList<>(estagiarios);
+        }
     }
 
         public double getSalarioBrutoMensal() {
@@ -49,6 +54,16 @@ public class CLT extends Funcionario {
 
     public void setHabilidades(List<String> habilidades) {
         this.habilidades = new ArrayList<>(habilidades);
+    }
+    
+    public List<Estagiario> getEstagiarios() {
+        return new ArrayList<>(this.estagiarios);
+    }
+
+    public void setEstagiarios(List<Estagiario> estagiarios) {
+        if(estagiarios.size() < 2){
+            this.estagiarios = new ArrayList<>(estagiarios);
+        }
     }
 
 }
