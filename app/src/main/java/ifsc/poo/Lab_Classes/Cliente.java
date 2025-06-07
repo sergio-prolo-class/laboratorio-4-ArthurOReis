@@ -1,5 +1,7 @@
 package ifsc.poo.Lab_Classes;
 
+import ifsc.poo.Lab_Classes.ClassesFuncionario.ClassesCLT.Senior;
+
 public class Cliente extends Pessoa {
     private static int proximoId = 1;
     private final int id;
@@ -10,19 +12,25 @@ public class Cliente extends Pessoa {
     private String dataInicioPremium;
     private boolean premium;
     private double pagamentoMensal;
-    Funcionario representante;
+    private Senior representante;
     
-    public Cliente(String nome, String sobrenome, String cpf, String email, String endereco, String telefone, String genero, String dataCadastro, String dataInicioPremium, boolean premium, double pagamentoMensal, Funcionario representante) {
+    public Cliente(String nome, String sobrenome, String cpf, String email, String endereco, String telefone, String genero, String dataCadastro, String dataInicioPremium, boolean premium, double pagamentoMensal, Senior representante) {
         super(nome, sobrenome, cpf, email);
         this.id = proximoId++;
         this.endereco = endereco;
         this.telefone = telefone;
         this.genero = genero;
         this.dataCadastro = dataCadastro;
-        this.dataInicioPremium = dataInicioPremium;
         this.premium = premium;
-        this.pagamentoMensal = pagamentoMensal;
-        this.representante = representante;
+        if (premium) {
+            this.dataInicioPremium = dataInicioPremium;
+            this.pagamentoMensal = pagamentoMensal;
+            this.representante = representante;
+        } else {
+            this.dataInicioPremium = null;
+            this.pagamentoMensal = 0;
+            this.representante = null;
+        }
     }
 
     public int getId() {
@@ -85,11 +93,11 @@ public class Cliente extends Pessoa {
         this.pagamentoMensal = pagamentoMensal;
     }
 
-    public Funcionario getRepresentante() {
+    public Senior getRepresentante() {
         return representante;
     }
 
-    public void setRepresentante(Funcionario representante) {
+    public void setRepresentante(Senior representante) {
         this.representante = representante;
     }
 }
