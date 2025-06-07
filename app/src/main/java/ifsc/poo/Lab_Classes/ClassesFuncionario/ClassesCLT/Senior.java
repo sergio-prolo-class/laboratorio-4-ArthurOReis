@@ -31,5 +31,10 @@ public class Senior extends CLT {
     public void setPlenos(List<Pleno> plenos) {
         this.plenos = new ArrayList<>(plenos);
     }
+
+    @Override
+    public String getResumo() {
+        return super.getResumo() + ", Bonificação Anual Fixa: " + getBonificacaoAnualFixa() + ", Plenos: " + getPlenos().size();
+    }
     
 }

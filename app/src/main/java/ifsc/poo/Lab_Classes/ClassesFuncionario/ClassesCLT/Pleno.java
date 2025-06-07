@@ -32,4 +32,9 @@ public class Pleno extends CLT {
         this.juniors = new ArrayList<>(juniors);
     }
     
+    @Override
+    public String getResumo() {
+        return super.getResumo() + ", Chefe (Senior): " + (getChefe() != null ? getChefe().getResumo() : "Nenhum") + ", Juniors: " + getJuniors().size();
+    }
+
 }

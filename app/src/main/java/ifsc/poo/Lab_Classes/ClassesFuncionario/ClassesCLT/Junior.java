@@ -21,4 +21,9 @@ public class Junior extends CLT {
         this.orientador = orientador;
     }
     
+    @Override
+    public String getResumo() {
+        return super.getResumo() + ", Orientador (Pleno): " + (getOrientador() != null ? getOrientador().getResumo() : "Nenhum");
+    }
+
 }
