@@ -4,8 +4,8 @@ import ifsc.poo.Lab_Classes.ClassesFuncionario.CLT;
 import ifsc.poo.Lab_Classes.ClassesFuncionario.Estagiario;
 
 public class TI extends Estagiario {
-    private String numeroDaSerieComputador;
-    private boolean atuacaoRemotaPresenca;
+    protected String numeroDaSerieComputador;
+    protected boolean atuacaoRemotaPresenca;
 
     public TI(String nome, String sobrenome, String cpf, String email, String dataInicioContrato, double salarioBrutoMensal, int cargaHorariaSemanal, String nomeDaInstituicaoDeEnsino, boolean obrigatorio, CLT orientador, String numeroDaSerieComputador, boolean atuacaoRemotaPresenca){
         super(nome, sobrenome, cpf, email, dataInicioContrato, salarioBrutoMensal, cargaHorariaSemanal, nomeDaInstituicaoDeEnsino, obrigatorio, orientador);

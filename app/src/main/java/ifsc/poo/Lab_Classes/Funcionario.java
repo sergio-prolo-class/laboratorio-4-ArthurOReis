@@ -1,9 +1,9 @@
 package ifsc.poo.Lab_Classes;
 
 public class Funcionario extends Pessoa {
-    private static int proximoIdentificador = 1;
-    private final int identificador;
-    private String dataInicioContrato;
+    protected static int proximoIdentificador = 1;
+    protected final int identificador;
+    protected String dataInicioContrato;
 
     public Funcionario(String nome, String sobrenome, String cpf, String email, String dataInicioContrato){
         super(nome, sobrenome, cpf, email);

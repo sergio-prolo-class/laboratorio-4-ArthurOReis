@@ -7,8 +7,8 @@ import ifsc.poo.Lab_Classes.ClassesFuncionario.CLT;
 import ifsc.poo.Lab_Classes.ClassesFuncionario.Estagiario;
 
 public class Senior extends CLT {
-    private double bonificacaoAnualFixa;
-    private List<Pleno> plenos;
+    protected double bonificacaoAnualFixa;
+    protected List<Pleno> plenos;
     
     public Senior(String nome, String sobrenome, String cpf, String email, String dataInicioContrato, double salarioBrutoMensal, int cargaHorariaSemanal, String numeroCarteiraDeTrabalho, List<String> habilidades, List<Estagiario> estagiarios, double bonificacaoAnualFixa, List<Pleno> plenos) {
         super(nome, sobrenome, cpf, email, dataInicioContrato, salarioBrutoMensal, cargaHorariaSemanal, numeroCarteiraDeTrabalho, habilidades, estagiarios);

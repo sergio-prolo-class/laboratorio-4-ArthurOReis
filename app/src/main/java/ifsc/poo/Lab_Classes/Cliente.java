@@ -3,16 +3,16 @@ package ifsc.poo.Lab_Classes;
 import ifsc.poo.Lab_Classes.ClassesFuncionario.ClassesCLT.Senior;
 
 public class Cliente extends Pessoa {
-    private static int proximoId = 1;
-    private final int id;
-    private String endereco;
-    private String telefone;
-    private String genero;
-    private String dataCadastro;
-    private String dataInicioPremium;
-    private boolean premium;
-    private double pagamentoMensal;
-    private Senior representante;
+    protected static int proximoId = 1;
+    protected final int id;
+    protected String endereco;
+    protected String telefone;
+    protected String genero;
+    protected String dataCadastro;
+    protected String dataInicioPremium;
+    protected boolean premium;
+    protected double pagamentoMensal;
+    protected Senior representante;
     
     public Cliente(String nome, String sobrenome, String cpf, String email, String endereco, String telefone, String genero, String dataCadastro, String dataInicioPremium, boolean premium, double pagamentoMensal, Senior representante) {
         super(nome, sobrenome, cpf, email);

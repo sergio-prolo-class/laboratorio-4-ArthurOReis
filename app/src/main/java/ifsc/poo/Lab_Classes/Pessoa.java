@@ -1,10 +1,10 @@
 package ifsc.poo.Lab_Classes;
 
 public class Pessoa {
-    private String nome;
-    private String sobrenome;
-    private String cpf;
-    private String email;
+    protected String nome;
+    protected String sobrenome;
+    protected String cpf;
+    protected String email;
 
     public Pessoa(String nome, String sobrenome, String cpf, String email){
         this.nome = nome;

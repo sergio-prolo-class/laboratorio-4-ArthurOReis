@@ -4,8 +4,8 @@ import ifsc.poo.Lab_Classes.ClassesFuncionario.CLT;
 import ifsc.poo.Lab_Classes.ClassesFuncionario.Estagiario;
 
 public class Administracao extends Estagiario {
-    private String setorAtual;
-    private String descricaoTarefaPrincipal;
+    protected String setorAtual;
+    protected String descricaoTarefaPrincipal;
 
     public Administracao(String nome, String sobrenome, String cpf, String email, String dataInicioContrato, double salarioBrutoMensal, int cargaHorariaSemanal, String nomeDaInstituicaoDeEnsino, boolean obrigatorio, CLT orientador, String setorAtual, String descricaoTarefaPrincipal){
         super(nome, sobrenome, cpf, email, dataInicioContrato, salarioBrutoMensal, cargaHorariaSemanal, nomeDaInstituicaoDeEnsino, obrigatorio, orientador);

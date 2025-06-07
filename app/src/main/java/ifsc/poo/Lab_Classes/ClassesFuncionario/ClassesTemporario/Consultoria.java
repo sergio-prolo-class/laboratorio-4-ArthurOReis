@@ -4,8 +4,8 @@ import ifsc.poo.Lab_Classes.ClassesFuncionario.ClassesCLT.Pleno;
 import ifsc.poo.Lab_Classes.ClassesFuncionario.Temporario;
 
 public class Consultoria extends Temporario {
-    private int numeroRelatoriosParaEntregar;
-    private Pleno intermediario;
+    protected int numeroRelatoriosParaEntregar;
+    protected Pleno intermediario;
 
     public Consultoria(String nome, String sobrenome, String cpf, String email, String dataInicioContrato, String dataTerminoContrato, double valorTotalContrato, int numeroRelatoriosParaEntregar, Pleno intermediario) {
         super(nome, sobrenome, cpf, email, dataInicioContrato, dataTerminoContrato, valorTotalContrato);

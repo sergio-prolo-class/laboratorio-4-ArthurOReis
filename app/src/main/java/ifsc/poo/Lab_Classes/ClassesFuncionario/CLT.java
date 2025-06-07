@@ -6,11 +6,11 @@ import java.util.List;
 import ifsc.poo.Lab_Classes.Funcionario;
 
 public class CLT extends Funcionario {
-    private double salarioBrutoMensal;
-    private int cargaHorariaSemanal;
-    private String numeroCarteiraDeTrabalho;
-    private List<String> habilidades;
-    private List<Estagiario> estagiarios;
+    protected double salarioBrutoMensal;
+    protected int cargaHorariaSemanal;
+    protected String numeroCarteiraDeTrabalho;
+    protected List<String> habilidades;
+    protected List<Estagiario> estagiarios;
     
     public CLT(String nome, String sobrenome, String cpf, String email, String dataInicioContrato, double salarioBrutoMensal, int cargaHorariaSemanal, String numeroCarteiraDeTrabalho, List<String> habilidades, List<Estagiario> estagiarios){
         super(nome, sobrenome, cpf, email, dataInicioContrato);
