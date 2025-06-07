@@ -23,7 +23,7 @@ public class Junior extends CLT {
     
     @Override
     public String getResumo() {
-        return super.getResumo() + ", Orientador (Pleno): " + (getOrientador() != null ? getOrientador().getResumo() : "Nenhum");
+        return super.getResumo() + "\n Orientador (Pleno): " + (getOrientador() != null ? getOrientador().getResumo() : "Nenhum");
     }
 
 }

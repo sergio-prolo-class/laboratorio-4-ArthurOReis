@@ -31,7 +31,7 @@ public class Administracao extends Estagiario {
 
     @Override
     public String getResumo() {
-        return super.getResumo() + ", Setor Atual: " + getSetorAtual() + ", Tarefa Principal: " + getDescricaoTarefaPrincipal();
+        return super.getResumo() + "\n Setor Atual: " + getSetorAtual() + "\n Tarefa Principal: " + getDescricaoTarefaPrincipal();
     }
     
 }

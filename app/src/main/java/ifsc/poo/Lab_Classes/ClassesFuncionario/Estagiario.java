@@ -61,7 +61,7 @@ public class Estagiario extends Funcionario {
 
     @Override
     public String getResumo() {
-        return super.getResumo() + ", Salário Bruto Mensal: " + getSalarioBrutoMensal() + ", Carga Horária Semanal: " + getCargaHorariaSemanal() + ", Instituição de Ensino: " + getNomeDaInstituicaoDeEnsino() + ", Obrigatório: " + isObrigatorio() + ", Orientador (CLT): " + (getOrientador() != null ? getOrientador().getResumo() : "Nenhum");
+        return super.getResumo() + "\n Salário Bruto Mensal: " + getSalarioBrutoMensal() + "\n Carga Horária Semanal: " + getCargaHorariaSemanal() + "\n Instituição de Ensino: " + getNomeDaInstituicaoDeEnsino() + "\n Obrigatório: " + isObrigatorio() + "\n Orientador (CLT): " + (getOrientador() != null ? getOrientador().getResumo() : "Nenhum");
     }
 
 }

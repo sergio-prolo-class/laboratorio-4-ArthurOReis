@@ -46,7 +46,7 @@ public class Pessoa {
     }
 
     public String getResumo() {
-        return "Nome: " + getNome() + ", Sobrenome: " + getSobrenome() + ", CPF: " + getCPF() + ", Email: " + getEmail();
+        return " Nome: " + getNome() + "\n Sobrenome: " + getSobrenome() + "\n CPF: " + getCPF() + "\n Email: " + getEmail();
     }
 
 }

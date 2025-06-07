@@ -103,11 +103,11 @@ public class Cliente extends Pessoa {
 
     @Override
     public String getResumo() {
-        String resumo = "ID: " + getId() + ", " + super.getResumo() + ", Endereço: " + getEndereco() + ", Telefone: " + getTelefone() + ", Gênero: " + getGenero() + ", Data de Cadastro: " + getDataCadastro();
+        String resumo = " ID: " + getId() + "\n" + super.getResumo() + "\n Endereço: " + getEndereco() + "\n Telefone: " + getTelefone() + "\n Gênero: " + getGenero() + "\n Data de Cadastro: " + getDataCadastro();
         if (isPremium()) {
-            resumo += ", Premium: Sim" + ", Data Início Premium: " + getDataInicioPremium() + ", Pagamento Mensal: " + getPagamentoMensal() + ", Representante: " + (getRepresentante() != null ? getRepresentante().getResumo() : "Nenhum");
+            resumo += "\n Premium: Sim" + "\n Data Início Premium: " + getDataInicioPremium() + "\n Pagamento Mensal: " + getPagamentoMensal() + "\n Representante: " + (getRepresentante() != null ? getRepresentante().getResumo() : "Nenhum");
         } else {
-            resumo += ", Premium: Não";
+            resumo += "\n Premium: Não";
         }
         return resumo;
     }

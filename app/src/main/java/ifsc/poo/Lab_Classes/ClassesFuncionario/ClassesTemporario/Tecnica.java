@@ -33,7 +33,7 @@ public class Tecnica extends Temporario {
 
     @Override
     public String getResumo() {
-        return super.getResumo() + ", Necessidade EPIs: " + (isNecessidadeEPIs() ? "Sim" : "Não") + ", Turnos de Trabalho: " + getTurnosDeTrabalho();
+        return super.getResumo() + "\n Necessidade EPIs: " + (isNecessidadeEPIs() ? "Sim" : "Não") + "\n Turnos de Trabalho: " + getTurnosDeTrabalho();
     }
 
 }

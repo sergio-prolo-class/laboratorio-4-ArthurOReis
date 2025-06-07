@@ -34,7 +34,7 @@ public class Senior extends CLT {
 
     @Override
     public String getResumo() {
-        return super.getResumo() + ", Bonificação Anual Fixa: " + getBonificacaoAnualFixa() + ", Plenos: " + getPlenos().size();
+        return super.getResumo() + "\n Bonificação Anual Fixa: " + getBonificacaoAnualFixa() + "\n Plenos: " + getPlenos().size();
     }
     
 }

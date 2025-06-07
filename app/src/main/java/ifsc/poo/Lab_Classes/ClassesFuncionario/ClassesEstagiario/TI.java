@@ -31,7 +31,7 @@ public class TI extends Estagiario {
 
     @Override
     public String getResumo() {
-        return super.getResumo() + ", Nº Série Computador: " + getNumeroDaSerieComputador() + ", Atuação Remota/Presencial: " + (isAtuacaoRemotaPresenca() ? "Sim" : "Não");
+        return super.getResumo() + "\n Nº Série Computador: " + getNumeroDaSerieComputador() + "\n Atuação Remota/Presencial: " + (isAtuacaoRemotaPresenca() ? "Sim" : "Não");
     }
 
 }

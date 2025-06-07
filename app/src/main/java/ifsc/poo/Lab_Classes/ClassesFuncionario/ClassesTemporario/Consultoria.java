@@ -31,7 +31,7 @@ public class Consultoria extends Temporario {
 
     @Override
     public String getResumo() {
-        return super.getResumo() + ", Nº Relatórios: " + getNumeroRelatoriosParaEntregar() + ", Intermediário (Pleno): " + (getIntermediario() != null ? getIntermediario().getResumo() : "Nenhum");
+        return super.getResumo() + "\n Nº Relatórios: " + getNumeroRelatoriosParaEntregar() + "\n Intermediário (Pleno): " + (getIntermediario() != null ? getIntermediario().getResumo() : "Nenhum");
     }
     
 }

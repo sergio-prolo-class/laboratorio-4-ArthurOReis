@@ -30,7 +30,7 @@ public class Temporario extends Funcionario {
 
     @Override
     public String getResumo() {
-        return super.getResumo() + ", Data Término Contrato: " + getDataTerminoContrato() + ", Valor Total Contrato: " + getValorTotalContrato();
+        return super.getResumo() + "\n Data Término Contrato: " + getDataTerminoContrato() + "\n Valor Total Contrato: " + getValorTotalContrato();
     }
 
 }

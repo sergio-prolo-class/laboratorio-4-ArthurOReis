@@ -67,7 +67,7 @@ public class CLT extends Funcionario {
 
     @Override
     public String getResumo() {
-        return super.getResumo() + ", Salário Bruto Mensal: " + getSalarioBrutoMensal() + ", Carga Horária Semanal: " + getCargaHorariaSemanal() + ", Carteira de Trabalho: " + getNumeroCarteiraDeTrabalho() + ", Habilidades: " + getHabilidades();
+        return super.getResumo() + "\n Salário Bruto Mensal: " + getSalarioBrutoMensal() + "\n Carga Horária Semanal: " + getCargaHorariaSemanal() + "\n Carteira de Trabalho: " + getNumeroCarteiraDeTrabalho() + "\n Habilidades: " + getHabilidades();
     }
 
 }

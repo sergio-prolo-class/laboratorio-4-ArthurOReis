@@ -25,7 +25,7 @@ public class Funcionario extends Pessoa {
 
     @Override
     public String getResumo() {
-        return super.getResumo() + ", Identificador: " + getIdentificador();
+        return super.getResumo() + "\n Identificador: " + getIdentificador();
     }
 
 }

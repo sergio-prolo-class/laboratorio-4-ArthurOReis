@@ -34,7 +34,7 @@ public class Pleno extends CLT {
     
     @Override
     public String getResumo() {
-        return super.getResumo() + ", Chefe (Senior): " + (getChefe() != null ? getChefe().getResumo() : "Nenhum") + ", Juniors: " + getJuniors().size();
+        return super.getResumo() + "\n Chefe (Senior): " + (getChefe() != null ? getChefe().getResumo() : "Nenhum") + "\n Juniors: " + getJuniors().size();
     }
 
 }
