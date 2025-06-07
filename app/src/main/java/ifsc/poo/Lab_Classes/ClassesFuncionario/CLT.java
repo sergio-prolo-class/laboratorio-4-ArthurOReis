@@ -18,13 +18,10 @@ public class CLT extends Funcionario {
         this.cargaHorariaSemanal = cargaHorariaSemanal;
         this.numeroCarteiraDeTrabalho = numeroCarteiraDeTrabalho;
         this.habilidades = new ArrayList<>(habilidades);
-
-        if(estagiarios.size() < 2){
-            this.estagiarios = new ArrayList<>(estagiarios);
-        }
+        this.estagiarios = new ArrayList<>(estagiarios);
     }
 
-        public double getSalarioBrutoMensal() {
+    public double getSalarioBrutoMensal() {
         return salarioBrutoMensal;
     }
 
@@ -61,8 +58,10 @@ public class CLT extends Funcionario {
     }
 
     public void setEstagiarios(List<Estagiario> estagiarios) {
-        if(estagiarios.size() < 2){
+        if(estagiarios.size() <= 2){
             this.estagiarios = new ArrayList<>(estagiarios);
+        } else {
+            throw new IllegalArgumentException("Um CLT pode orientar no máximo 2 estagiários.");
         }
     }
 

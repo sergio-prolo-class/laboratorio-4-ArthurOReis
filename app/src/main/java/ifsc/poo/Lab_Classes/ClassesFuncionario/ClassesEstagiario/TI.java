@@ -7,8 +7,8 @@ public class TI extends Estagiario {
     private String numeroDaSerieComputador;
     private boolean atuacaoRemotaPresenca;
 
-    public TI(String nome, String sobrenome, String cpf, String email, String dataInicioContrato, double salarioBrutoMensal, int cargaHorariaSemanal, String nomeDaInstituicaoDeEnsino, CLT orientador, String numeroDaSerieComputador, boolean atuacaoRemotaPresenca){
-        super(nomeDaInstituicaoDeEnsino, nomeDaInstituicaoDeEnsino, nomeDaInstituicaoDeEnsino, nomeDaInstituicaoDeEnsino, nomeDaInstituicaoDeEnsino, cargaHorariaSemanal, cargaHorariaSemanal, nomeDaInstituicaoDeEnsino, orientador);
+    public TI(String nome, String sobrenome, String cpf, String email, String dataInicioContrato, double salarioBrutoMensal, int cargaHorariaSemanal, String nomeDaInstituicaoDeEnsino, boolean obrigatorio, CLT orientador, String numeroDaSerieComputador, boolean atuacaoRemotaPresenca){
+        super(nome, sobrenome, cpf, email, dataInicioContrato, salarioBrutoMensal, cargaHorariaSemanal, nomeDaInstituicaoDeEnsino, obrigatorio, orientador);
         this.numeroDaSerieComputador = numeroDaSerieComputador;
         this.atuacaoRemotaPresenca = atuacaoRemotaPresenca;
     }

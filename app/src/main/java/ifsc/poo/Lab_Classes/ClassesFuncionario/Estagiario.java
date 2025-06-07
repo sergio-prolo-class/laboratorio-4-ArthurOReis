@@ -6,13 +6,15 @@ public class Estagiario extends Funcionario {
     private double salarioBrutoMensal;
     private int cargaHorariaSemanal;
     private String nomeDaInstituicaoDeEnsino;
+    private boolean obrigatorio;
     private CLT orientador;
     
-    public Estagiario(String nome, String sobrenome, String cpf, String email, String dataInicioContrato, double salarioBrutoMensal, int cargaHorariaSemanal, String nomeDaInstituicaoDeEnsino, CLT orientador){
+    public Estagiario(String nome, String sobrenome, String cpf, String email, String dataInicioContrato, double salarioBrutoMensal, int cargaHorariaSemanal, String nomeDaInstituicaoDeEnsino, boolean obrigatorio, CLT orientador){
         super(nome, sobrenome, cpf, email, dataInicioContrato);
         this.salarioBrutoMensal = salarioBrutoMensal;
         this.cargaHorariaSemanal = cargaHorariaSemanal;
         this.nomeDaInstituicaoDeEnsino = nomeDaInstituicaoDeEnsino;
+        this.obrigatorio = obrigatorio;
         this.orientador = orientador;
     }
 
@@ -38,6 +40,15 @@ public class Estagiario extends Funcionario {
 
     public void setNomeDaInstituicaoDeEnsino(String nomeDaInstituicaoDeEnsino) {
         this.nomeDaInstituicaoDeEnsino = nomeDaInstituicaoDeEnsino;
+    }
+
+
+    public boolean isObrigatorio() {
+        return obrigatorio;
+    }
+    
+    public void setObrigatorio(boolean obrigatorio) {
+        this.obrigatorio = obrigatorio;
     }
 
     public CLT getOrientador() {

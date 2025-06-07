@@ -7,8 +7,8 @@ public class Administracao extends Estagiario {
     private String setorAtual;
     private String descricaoTarefaPrincipal;
 
-    public Administracao(String nome, String sobrenome, String cpf, String email, String dataInicioContrato, double salarioBrutoMensal, int cargaHorariaSemanal, String nomeDaInstituicaoDeEnsino, CLT orientador, String setorAtual, String descricaoTarefaPrincipal){
-        super(nomeDaInstituicaoDeEnsino, nomeDaInstituicaoDeEnsino, nomeDaInstituicaoDeEnsino, nomeDaInstituicaoDeEnsino, nomeDaInstituicaoDeEnsino, cargaHorariaSemanal, cargaHorariaSemanal, nomeDaInstituicaoDeEnsino, orientador);
+    public Administracao(String nome, String sobrenome, String cpf, String email, String dataInicioContrato, double salarioBrutoMensal, int cargaHorariaSemanal, String nomeDaInstituicaoDeEnsino, boolean obrigatorio, CLT orientador, String setorAtual, String descricaoTarefaPrincipal){
+        super(nome, sobrenome, cpf, email, dataInicioContrato, salarioBrutoMensal, cargaHorariaSemanal, nomeDaInstituicaoDeEnsino, obrigatorio, orientador);
         this.setorAtual = setorAtual;
         this.descricaoTarefaPrincipal = descricaoTarefaPrincipal;
     }
