@@ -28,4 +28,9 @@ public class Temporario extends Funcionario {
         this.valorTotalContrato = valorTotalContrato;
     }
 
+    @Override
+    public String getResumo() {
+        return super.getResumo() + ", Data Término Contrato: " + getDataTerminoContrato() + ", Valor Total Contrato: " + getValorTotalContrato();
+    }
+
 }

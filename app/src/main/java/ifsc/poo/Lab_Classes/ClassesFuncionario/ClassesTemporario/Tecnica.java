@@ -31,4 +31,9 @@ public class Tecnica extends Temporario {
         this.turnosDeTrabalho = new ArrayList<>(turnosDeTrabalho);
     }
 
+    @Override
+    public String getResumo() {
+        return super.getResumo() + ", Necessidade EPIs: " + (isNecessidadeEPIs() ? "Sim" : "Não") + ", Turnos de Trabalho: " + getTurnosDeTrabalho();
+    }
+
 }
