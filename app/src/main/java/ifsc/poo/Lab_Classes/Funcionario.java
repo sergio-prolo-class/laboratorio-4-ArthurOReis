@@ -23,4 +23,9 @@ public class Funcionario extends Pessoa {
         this.dataInicioContrato = dataInicioContrato;
     }
 
+    @Override
+    public String getResumo() {
+        return super.getResumo() + ", Identificador: " + getIdentificador();
+    }
+
 }

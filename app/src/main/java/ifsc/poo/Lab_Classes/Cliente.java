@@ -100,4 +100,16 @@ public class Cliente extends Pessoa {
     public void setRepresentante(Senior representante) {
         this.representante = representante;
     }
+
+    @Override
+    public String getResumo() {
+        String resumo = "ID: " + getId() + ", " + super.getResumo() + ", Endereço: " + getEndereco() + ", Telefone: " + getTelefone() + ", Gênero: " + getGenero() + ", Data de Cadastro: " + getDataCadastro();
+        if (isPremium()) {
+            resumo += ", Premium: Sim" + ", Data Início Premium: " + getDataInicioPremium() + ", Pagamento Mensal: " + getPagamentoMensal() + ", Representante: " + (getRepresentante() != null ? getRepresentante().getResumo() : "Nenhum");
+        } else {
+            resumo += ", Premium: Não";
+        }
+        return resumo;
+    }
+
 }
