@@ -28,5 +28,10 @@ public class Administracao extends Estagiario {
     public void setDescricaoTarefaPrincipal(String descricaoTarefaPrincipal) {
         this.descricaoTarefaPrincipal = descricaoTarefaPrincipal;
     }
+
+    @Override
+    public String getResumo() {
+        return super.getResumo() + ", Setor Atual: " + getSetorAtual() + ", Tarefa Principal: " + getDescricaoTarefaPrincipal();
+    }
     
 }

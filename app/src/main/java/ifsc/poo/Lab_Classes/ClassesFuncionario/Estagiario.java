@@ -58,4 +58,10 @@ public class Estagiario extends Funcionario {
     public void setOrientador(CLT orientador) {
         this.orientador = orientador;
     }
+
+    @Override
+    public String getResumo() {
+        return super.getResumo() + ", Salário Bruto Mensal: " + getSalarioBrutoMensal() + ", Carga Horária Semanal: " + getCargaHorariaSemanal() + ", Instituição de Ensino: " + getNomeDaInstituicaoDeEnsino() + ", Obrigatório: " + isObrigatorio() + ", Orientador (CLT): " + (getOrientador() != null ? getOrientador().getResumo() : "Nenhum");
+    }
+
 }

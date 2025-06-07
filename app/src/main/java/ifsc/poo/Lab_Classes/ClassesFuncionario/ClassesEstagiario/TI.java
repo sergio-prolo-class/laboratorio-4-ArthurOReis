@@ -28,4 +28,10 @@ public class TI extends Estagiario {
     public void setAtuacaoRemotaPresenca(boolean atuacaoRemotaPresenca) {
         this.atuacaoRemotaPresenca = atuacaoRemotaPresenca;
     }
+
+    @Override
+    public String getResumo() {
+        return super.getResumo() + ", Nº Série Computador: " + getNumeroDaSerieComputador() + ", Atuação Remota/Presencial: " + (isAtuacaoRemotaPresenca() ? "Sim" : "Não");
+    }
+
 }
