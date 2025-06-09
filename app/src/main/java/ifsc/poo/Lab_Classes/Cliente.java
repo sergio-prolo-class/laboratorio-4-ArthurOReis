@@ -11,28 +11,14 @@ public class Cliente extends Pessoa {
     protected String telefone;
     protected String genero;
     protected String dataCadastro;
-    protected String dataInicioPremium;
-    protected boolean premium;
-    protected double pagamentoMensal;
-    protected Senior representante;
     
-    public Cliente(String nome, String sobrenome, String cpf, Queue<String> emails, String endereco, String telefone, String genero, String dataCadastro, String dataInicioPremium, boolean premium, double pagamentoMensal, Senior representante) {
+    public Cliente(String nome, String sobrenome, String cpf, Queue<String> emails, String endereco, String telefone, String genero, String dataCadastro) {
         super(nome, sobrenome, cpf, emails);
         this.id = proximoId++;
         this.endereco = endereco;
         this.telefone = telefone;
         this.genero = genero;
         this.dataCadastro = dataCadastro;
-        this.premium = premium;
-        if (premium) {
-            this.dataInicioPremium = dataInicioPremium;
-            this.pagamentoMensal = pagamentoMensal;
-            this.representante = representante;
-        } else {
-            this.dataInicioPremium = null;
-            this.pagamentoMensal = 0;
-            this.representante = null;
-        }
     }
 
     public int getId() {
@@ -71,47 +57,9 @@ public class Cliente extends Pessoa {
         this.dataCadastro = dataCadastro;
     }
 
-    public String getDataInicioPremium() {
-        return dataInicioPremium;
-    }
-
-    public void setDataInicioPremium(String dataInicioPremium) {
-        this.dataInicioPremium = dataInicioPremium;
-    }
-
-    public boolean isPremium() {
-        return premium;
-    }
-
-    public void setPremium(boolean premium) {
-        this.premium = premium;
-    }
-
-    public double getPagamentoMensal() {
-        return pagamentoMensal;
-    }
-
-    public void setPagamentoMensal(double pagamentoMensal) {
-        this.pagamentoMensal = pagamentoMensal;
-    }
-
-    public Senior getRepresentante() {
-        return representante;
-    }
-
-    public void setRepresentante(Senior representante) {
-        this.representante = representante;
-    }
-
     @Override
     public String getResumo() {
-        String resumo = " ID: " + getId() + "\n" + super.getResumo() + "\n Endereço: " + getEndereco() + "\n Telefone: " + getTelefone() + "\n Gênero: " + getGenero() + "\n Data de Cadastro: " + getDataCadastro();
-        if (isPremium()) {
-            resumo += "\n Premium: Sim" + "\n Data Início Premium: " + getDataInicioPremium() + "\n Pagamento Mensal: " + getPagamentoMensal() + "\n Representante: " + (getRepresentante() != null ? getRepresentante().getResumo() : "Nenhum");
-        } else {
-            resumo += "\n Premium: Não";
-        }
-        return resumo;
+        return " ID: " + getId() + "\n" + super.getResumo() + "\n Endereço: " + getEndereco() + "\n Telefone: " + getTelefone() + "\n Gênero: " + getGenero() + "\n Data de Cadastro: " + getDataCadastro();
     }
 
 }
