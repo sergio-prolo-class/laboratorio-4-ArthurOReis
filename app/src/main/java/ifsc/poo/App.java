@@ -5,7 +5,9 @@ package ifsc.poo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 import ifsc.poo.Lab_Classes.ClassesFuncionario.CLT;
 import ifsc.poo.Lab_Classes.ClassesFuncionario.ClassesCLT.Junior;
@@ -18,6 +20,7 @@ import ifsc.poo.Lab_Classes.ClassesFuncionario.ClassesTemporario.Tecnica;
 import ifsc.poo.Lab_Classes.ClassesFuncionario.Estagiario;
 import ifsc.poo.Lab_Classes.ClassesFuncionario.Temporario;
 import ifsc.poo.Lab_Classes.Cliente;
+import ifsc.poo.Lab_Classes.ClientePremium;
 import ifsc.poo.Lab_Classes.Funcionario;
 import ifsc.poo.Lab_Classes.Pessoa;
 
@@ -27,62 +30,87 @@ public class App {
         List<Pessoa> pessoas = new ArrayList<>();
 
         // Pessoa
-        Pessoa pessoa = new Pessoa("João", "Silva", "000.000.000-00", "joao@email.com");
+        Queue<String> emailsPessoa = new LinkedList<>(Arrays.asList("joao@email.com"));
+        Pessoa pessoa = new Pessoa("João", "Silva", "000.000.000-00", emailsPessoa);
         pessoas.add(pessoa);
 
+        // Senior (usado como representante e para hierarquia)
+        Queue<String> emailsSeniorRep = new LinkedList<>(Arrays.asList("seniorrep@email.com"));
+        Senior seniorRep = new Senior("SeniorRep", "Sênior", "111.111.111-11", emailsSeniorRep, "2020-01-01", 15000, 40, "CTPS001", Arrays.asList("Gestão"), new ArrayList<>(), 5000, new ArrayList<>());
+
         // Cliente
-        Senior seniorRep = new Senior("SeniorRep", "Sênior", "111.111.111-11", "seniorrep@email.com", "2020-01-01", 15000, 40, "CTPS001", Arrays.asList("Gestão"), new ArrayList<>(), 5000, new ArrayList<>());
-        Cliente cliente = new Cliente("Maria", "Oliveira", "123.456.789-00", "maria@email.com", "Rua A, 123", "99999-0000", "F", "2024-01-01", "2024-02-01", true, 200.0, seniorRep);
+        Queue<String> emailsCliente = new LinkedList<>(Arrays.asList("maria@email.com"));
+        Cliente cliente = new Cliente("Maria", "Oliveira", "123.456.789-00", emailsCliente, "Rua A, 123", "99999-0000", "F", "2024-01-01");
         pessoas.add(cliente);
 
-        // Funcionário
-        Funcionario funcionario = new Funcionario("Carlos", "Pereira", "222.222.222-22", "carlos@email.com", "2023-01-01");
+        // ClientePremium
+        Queue<String> emailsClientePremium = new LinkedList<>(Arrays.asList("premium@email.com"));
+        ClientePremium clientePremium = new ClientePremium("Marina", "Souza", "321.654.987-00", emailsClientePremium, "Rua B, 456", "88888-0000", "F", "2024-02-01", "2024-03-01", 200.0, seniorRep);
+        pessoas.add(clientePremium);
+
+        // Funcionario
+        Queue<String> emailsFuncionario = new LinkedList<>(Arrays.asList("carlos@email.com"));
+        Funcionario funcionario = new Funcionario("Carlos", "Pereira", "222.222.222-22", emailsFuncionario, "2023-01-01");
         pessoas.add(funcionario);
 
-        // Temporário
-        Temporario temporario = new Temporario("Helena", "Alves", "333.333.333-33", "helena@email.com", "2024-02-01", "2024-08-01", 20000);
+        // Temporario
+        Queue<String> emailsTemporario = new LinkedList<>(Arrays.asList("helena@email.com"));
+        Temporario temporario = new Temporario("Helena", "Alves", "333.333.333-33", emailsTemporario, "2024-02-01", "2024-08-01", 20000);
         pessoas.add(temporario);
 
-        // Estagiário
-        CLT cltOrientador = new CLT("Daniela", "Costa", "444.444.444-44", "daniela@email.com", "2023-04-01", 6000, 40, "CTPS004", Arrays.asList("Typescript", "node-js backend"), new ArrayList<>());
-        Estagiario estagiario = new Estagiario("Eduardo", "Pereira", "555.555.555-55", "eduardo@email.com", "2024-05-01", 1500, 30, "IFSC", true, cltOrientador);
+        // CLT (usado como orientador de estagiário)
+        Queue<String> emailsCLTOrientador = new LinkedList<>(Arrays.asList("daniela@email.com"));
+        CLT cltOrientador = new CLT("Daniela", "Costa", "444.444.444-44", emailsCLTOrientador, "2023-04-01", 6000, 40, "CTPS004", Arrays.asList("Typescript", "node-js backend"), new ArrayList<>());
+        // Estagiario
+        Queue<String> emailsEstagiario = new LinkedList<>(Arrays.asList("eduardo@email.com"));
+        Estagiario estagiario = new Estagiario("Eduardo", "Pereira", "555.555.555-55", emailsEstagiario, "2024-05-01", 1500, 30, "IFSC", true, cltOrientador);
         pessoas.add(estagiario);
 
         // CLT
-        CLT clt = new CLT("Fernanda", "Lima", "666.666.666-66", "fernanda@email.com", "2022-06-01", 8000, 40, "CTPS005", Arrays.asList("Java", "Spring"), new ArrayList<>());
+        Queue<String> emailsCLT = new LinkedList<>(Arrays.asList("fernanda@email.com"));
+        CLT clt = new CLT("Fernanda", "Lima", "666.666.666-66", emailsCLT, "2022-06-01", 8000, 40, "CTPS005", Arrays.asList("Java", "Spring"), new ArrayList<>());
         pessoas.add(clt);
 
-        // Júnior
-        Pleno plenoOrientador = new Pleno("Bruno", "Souza", "777.777.777-77", "bruno@email.com", "2021-02-01", 9000, 40, "CTPS006", Arrays.asList("C", "Rust", "Assembly"), new ArrayList<>(), seniorRep, new ArrayList<>());
-        Junior junior = new Junior("Lucas", "Junior", "888.888.888-88", "lucas@email.com", "2023-03-01", 4000, 40, "CTPS007", Arrays.asList("Julia", "Matlab"), new ArrayList<>(), plenoOrientador);
+        // Pleno (usado como orientador de Junior)
+        Queue<String> emailsPlenoOrientador = new LinkedList<>(Arrays.asList("bruno@email.com"));
+        Pleno plenoOrientador = new Pleno("Bruno", "Souza", "777.777.777-77", emailsPlenoOrientador, "2021-02-01", 9000, 40, "CTPS006", Arrays.asList("C", "Rust", "Assembly"), new ArrayList<>(), seniorRep, new ArrayList<>());
+        // Junior
+        Queue<String> emailsJunior = new LinkedList<>(Arrays.asList("lucas@email.com"));
+        Junior junior = new Junior("Lucas", "Junior", "888.888.888-88", emailsJunior, "2023-03-01", 4000, 40, "CTPS007", Arrays.asList("Julia", "Matlab"), new ArrayList<>(), plenoOrientador);
         pessoas.add(junior);
 
         // Pleno
         List<Junior> juniors = new ArrayList<>();
         juniors.add(junior);
-        Pleno pleno = new Pleno("Thomas", "Santos", "999.999.999-99", "bruno2@email.com", "2021-02-01", 9000, 40, "CTPS008", Arrays.asList("Python", "pandaspy"), new ArrayList<>(), seniorRep, juniors);
+        Queue<String> emailsPleno = new LinkedList<>(Arrays.asList("bruno2@email.com"));
+        Pleno pleno = new Pleno("Thomas", "Santos", "999.999.999-99", emailsPleno, "2021-02-01", 9000, 40, "CTPS008", Arrays.asList("Python", "pandaspy"), new ArrayList<>(), seniorRep, juniors);
         pessoas.add(pleno);
 
         // Senior
         List<Pleno> plenos = new ArrayList<>();
         plenos.add(pleno);
-        Senior senior = new Senior("Ana", "Silva", "101.010.101-01", "ana@email.com", "2020-01-01", 15000, 40, "CTPS009", Arrays.asList("Gestão"), new ArrayList<>(), 5000, plenos);
+        Queue<String> emailsSenior = new LinkedList<>(Arrays.asList("ana@email.com"));
+        Senior senior = new Senior("Ana", "Silva", "101.010.101-01", emailsSenior, "2020-01-01", 15000, 40, "CTPS009", Arrays.asList("Gestão"), new ArrayList<>(), 5000, plenos);
         pessoas.add(senior);
 
-        // Administração
-        Administracao admin = new Administracao("Gabriel", "Martins", "111.111.111-11", "gabriel@email.com", "2024-07-01", 1400, 30, "IFSC", true, cltOrientador, "RH", "Atendimento ao público");
+        // Administracao
+        Queue<String> emailsAdmin = new LinkedList<>(Arrays.asList("gabriel@email.com"));
+        Administracao admin = new Administracao("Gabriel", "Martins", "111.111.111-11", emailsAdmin, "2024-07-01", 1400, 30, "IFSC", true, cltOrientador, "RH", "Atendimento ao público");
         pessoas.add(admin);
 
         // TI
-        TI ti = new TI("Fernando", "Lima", "121.212.121-12", "fernando@email.com", "2024-06-01", 1600, 30, "IFSC", true, cltOrientador, "PC_00123", true);
+        Queue<String> emailsTI = new LinkedList<>(Arrays.asList("fernando@email.com"));
+        TI ti = new TI("Fernando", "Lima", "121.212.121-12", emailsTI, "2024-06-01", 1600, 30, "IFSC", true, cltOrientador, "PC_00123", true);
         pessoas.add(ti);
 
         // Consultoria
-        Consultoria consultoria = new Consultoria("Igor", "Ferreira", "313.131.313-13", "igor@email.com", "2024-09-01", "2025-09-01", 30000, 5, pleno);
+        Queue<String> emailsConsultoria = new LinkedList<>(Arrays.asList("igor@email.com"));
+        Consultoria consultoria = new Consultoria("Igor", "Ferreira", "313.131.313-13", emailsConsultoria, "2024-09-01", "2025-09-01", 30000, 5, pleno);
         pessoas.add(consultoria);
 
-        // Técnica
-        Tecnica tecnica = new Tecnica("Julia", "Ramos", "404.404.404-40", "julia@email.com", "2024-10-01", "2025-10-01", 25000, true, Arrays.asList("Manhã", "Tarde"));
+        // Tecnica
+        Queue<String> emailsTecnica = new LinkedList<>(Arrays.asList("julia@email.com"));
+        Tecnica tecnica = new Tecnica("Julia", "Ramos", "404.404.404-40", emailsTecnica, "2024-10-01", "2025-10-01", 25000, true, Arrays.asList("Manhã", "Tarde"));
         pessoas.add(tecnica);
 
         // Exibindo o resumo de cada pessoa
@@ -92,7 +120,5 @@ public class App {
             System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------");
             System.out.println();
         }
-
     }
-
 }

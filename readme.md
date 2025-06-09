@@ -66,6 +66,7 @@ Funcionários temporários devem registrar a data de término de contrato e valo
 ```mermaid
 classDiagram
     Pessoa <|-- Cliente
+    Cliente <|-- ClientePremium
     Pessoa <|-- Funcionario
     Funcionario <|-- CLT
     Funcionario <|-- Estagiario
@@ -82,13 +83,16 @@ classDiagram
         - String nome
         - String sobrenome
         - String cpf
-        - String email
+        - Queue~String~ email
         + String getNome()
         + String getSobrenome()
         + String getCPF()
-        + String getEmail()
+        + String getEmails()
+        + String addEmails(String... emails)
+        + String removeEmails(String... emails)
         + String getResumo()
     }
+
     class Cliente {
         - static int proximoId
         - final int id
@@ -96,20 +100,26 @@ classDiagram
         - String telefone
         - String genero
         - String dataCadastro
-        - String dataInicioPremium
-        - boolean premium
-        - double pagamentoMensal
-        - Senior representante
         + int getId()
         + String getEndereco()
         + String getTelefone()
         + String getGenero()
         + String getDataCadastro()
-        + String getDataInicioPremium()
-        + boolean isPremium()
-        + double getPagamentoMensal()
-        + Senior getRepresentante()
     }
+
+    class ClientePremium {
+        - String dataInicioPremium
+        - double pagamentoMensal
+        - Senior representante
+        + String getDataInicioPremium()
+        + void setDataInicioPremium(String)
+        + double getPagamentoMensal()
+        + void setPagamentoMensal(double)
+        + Senior getRepresentante()
+        + void setRepresentante(Senior)
+        + String getResumo()
+    }
+
     class Funcionario {
         - static int proximoIdentificador
         - final int identificador
@@ -117,6 +127,7 @@ classDiagram
         + int getIdentificador()
         + String getDataInicioContrato()
     }
+
     class CLT {
         - double salarioBrutoMensal
         - int cargaHorariaSemanal
@@ -129,11 +140,13 @@ classDiagram
         + List~String~ getHabilidades()
         + List~Estagiario~ getEstagiarios()
     }
+
     class Junior {
         - Pleno orientador
         + Pleno getOrientador()
         + void setOrientador(Pleno)
     }
+
     class Pleno {
         - Senior chefe
         - List~Junior~ juniors
@@ -142,6 +155,7 @@ classDiagram
         + List~Junior~ getJuniors()
         + void setJuniors(List~Junior~)
     }
+
     class Senior {
         - double bonificacaoAnualFixa
         - List~Pleno~ plenos
@@ -150,6 +164,7 @@ classDiagram
         + List~Pleno~ getPlenos()
         + void setPlenos(List~Pleno~)
     }
+
     class Estagiario {
         - double salarioBrutoMensal
         - int cargaHorariaSemanal
@@ -162,30 +177,35 @@ classDiagram
         + boolean isObrigatorio()
         + CLT getOrientador()
     }
+
     class TI {
         - String numeroDaSerieComputador
         - boolean atuacaoRemotaPresenca
         + String getNumeroDaSerieComputador()
         + boolean isAtuacaoRemotaPresenca()
     }
+
     class Administracao {
         - String setorAtual
         - String descricaoTarefaPrincipal
         + String getSetorAtual()
         + String getDescricaoTarefaPrincipal()
     }
+
     class Temporario {
         - String dataTerminoContrato
         - double valorTotalContrato
         + String getDataTerminoContrato()
         + double getValorTotalContrato()
     }
+
     class Consultoria {
         - int numeroRelatoriosParaEntregar
         - Pleno intermediario
         + int getNumeroRelatoriosParaEntregar()
         + Pleno getIntermediario()
     }
+
     class Tecnica {
         - boolean necessidadeEPIs
         - List~String~ turnosDeTrabalho
