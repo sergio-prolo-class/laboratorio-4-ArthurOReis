@@ -2,8 +2,6 @@ package ifsc.poo.Lab_Classes;
 
 import java.util.Queue;
 
-import ifsc.poo.Lab_Classes.ClassesFuncionario.ClassesCLT.Senior;
-
 public class Cliente extends Pessoa {
     protected static int proximoId = 1;
     protected final int id;
