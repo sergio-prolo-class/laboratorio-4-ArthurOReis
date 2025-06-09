@@ -1,13 +1,15 @@
 package ifsc.poo.Lab_Classes.ClassesFuncionario;
 
+import java.util.Queue;
+
 import ifsc.poo.Lab_Classes.Funcionario;
 
 public class Temporario extends Funcionario {
     protected String dataTerminoContrato;
     protected double valorTotalContrato;
     
-    public Temporario(String nome, String sobrenome, String cpf, String email, String dataInicioContrato, String dataTerminoContrato, double valorTotalContrato){
-        super(nome, sobrenome, cpf, email, dataInicioContrato);
+    public Temporario(String nome, String sobrenome, String cpf, Queue<String> emails, String dataInicioContrato, String dataTerminoContrato, double valorTotalContrato){
+        super(nome, sobrenome, cpf, emails, dataInicioContrato);
         this.dataTerminoContrato = dataTerminoContrato;
         this.valorTotalContrato = valorTotalContrato;
     }

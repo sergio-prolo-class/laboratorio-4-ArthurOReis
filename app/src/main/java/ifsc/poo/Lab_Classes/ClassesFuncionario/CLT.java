@@ -2,6 +2,7 @@ package ifsc.poo.Lab_Classes.ClassesFuncionario;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
 
 import ifsc.poo.Lab_Classes.Funcionario;
 
@@ -12,8 +13,8 @@ public class CLT extends Funcionario {
     protected List<String> habilidades;
     protected List<Estagiario> estagiarios;
     
-    public CLT(String nome, String sobrenome, String cpf, String email, String dataInicioContrato, double salarioBrutoMensal, int cargaHorariaSemanal, String numeroCarteiraDeTrabalho, List<String> habilidades, List<Estagiario> estagiarios){
-        super(nome, sobrenome, cpf, email, dataInicioContrato);
+    public CLT(String nome, String sobrenome, String cpf, Queue<String> emails, String dataInicioContrato, double salarioBrutoMensal, int cargaHorariaSemanal, String numeroCarteiraDeTrabalho, List<String> habilidades, List<Estagiario> estagiarios){
+        super(nome, sobrenome, cpf, emails, dataInicioContrato);
         this.salarioBrutoMensal = salarioBrutoMensal;
         this.cargaHorariaSemanal = cargaHorariaSemanal;
         this.numeroCarteiraDeTrabalho = numeroCarteiraDeTrabalho;

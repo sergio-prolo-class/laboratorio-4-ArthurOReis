@@ -2,6 +2,7 @@ package ifsc.poo.Lab_Classes.ClassesFuncionario.ClassesCLT;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
 
 import ifsc.poo.Lab_Classes.ClassesFuncionario.CLT;
 import ifsc.poo.Lab_Classes.ClassesFuncionario.Estagiario;
@@ -10,8 +11,8 @@ public class Senior extends CLT {
     protected double bonificacaoAnualFixa;
     protected List<Pleno> plenos;
     
-    public Senior(String nome, String sobrenome, String cpf, String email, String dataInicioContrato, double salarioBrutoMensal, int cargaHorariaSemanal, String numeroCarteiraDeTrabalho, List<String> habilidades, List<Estagiario> estagiarios, double bonificacaoAnualFixa, List<Pleno> plenos) {
-        super(nome, sobrenome, cpf, email, dataInicioContrato, salarioBrutoMensal, cargaHorariaSemanal, numeroCarteiraDeTrabalho, habilidades, estagiarios);
+    public Senior(String nome, String sobrenome, String cpf, Queue<String> emails, String dataInicioContrato, double salarioBrutoMensal, int cargaHorariaSemanal, String numeroCarteiraDeTrabalho, List<String> habilidades, List<Estagiario> estagiarios, double bonificacaoAnualFixa, List<Pleno> plenos) {
+        super(nome, sobrenome, cpf, emails, dataInicioContrato, salarioBrutoMensal, cargaHorariaSemanal, numeroCarteiraDeTrabalho, habilidades, estagiarios);
         this.bonificacaoAnualFixa = bonificacaoAnualFixa;
         this.plenos = new ArrayList<>(plenos);
     }

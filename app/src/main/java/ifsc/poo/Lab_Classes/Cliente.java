@@ -1,5 +1,7 @@
 package ifsc.poo.Lab_Classes;
 
+import java.util.Queue;
+
 import ifsc.poo.Lab_Classes.ClassesFuncionario.ClassesCLT.Senior;
 
 public class Cliente extends Pessoa {
@@ -14,8 +16,8 @@ public class Cliente extends Pessoa {
     protected double pagamentoMensal;
     protected Senior representante;
     
-    public Cliente(String nome, String sobrenome, String cpf, String email, String endereco, String telefone, String genero, String dataCadastro, String dataInicioPremium, boolean premium, double pagamentoMensal, Senior representante) {
-        super(nome, sobrenome, cpf, email);
+    public Cliente(String nome, String sobrenome, String cpf, Queue<String> emails, String endereco, String telefone, String genero, String dataCadastro, String dataInicioPremium, boolean premium, double pagamentoMensal, Senior representante) {
+        super(nome, sobrenome, cpf, emails);
         this.id = proximoId++;
         this.endereco = endereco;
         this.telefone = telefone;

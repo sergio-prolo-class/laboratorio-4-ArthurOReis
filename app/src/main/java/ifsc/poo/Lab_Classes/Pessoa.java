@@ -1,16 +1,20 @@
 package ifsc.poo.Lab_Classes;
 
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class Pessoa {
     protected String nome;
     protected String sobrenome;
     protected String cpf;
-    protected String email;
+    protected Queue<String> emails;
 
-    public Pessoa(String nome, String sobrenome, String cpf, String email){
+    public Pessoa(String nome, String sobrenome, String cpf, Queue<String> emails){
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.cpf = cpf;
-        this.email = email;
+        this.emails = new LinkedList<>(emails);
     }
 
     public String getNome(){
@@ -37,16 +41,20 @@ public class Pessoa {
         this.cpf = cpf;
     }
     
-    public String getEmail(){
-        return this.email;
+    public Queue<String> getEmails(){
+        return this.emails;
     }
 
-    public void setEmail(String email){
-        this.email = email;
+    public void addEmails(String... emails){
+        this.emails.addAll(Arrays.asList(emails));
+    }
+    
+    public void removeEmails(String... emails){
+        this.emails.removeAll(Arrays.asList(emails));
     }
 
     public String getResumo() {
-        return " Nome: " + getNome() + "\n Sobrenome: " + getSobrenome() + "\n CPF: " + getCPF() + "\n Email: " + getEmail();
+        return " Nome: " + getNome() + "\n Sobrenome: " + getSobrenome() + "\n CPF: " + getCPF() + "\n Emails: " + getEmails();
     }
 
 }
